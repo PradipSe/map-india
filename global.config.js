@@ -2,15 +2,17 @@
  * Env URLs
  */
 const protocol = "http://";
+const protocolSecure = "https://";
 const DEFAULT_PORT = 3000;
 
 const LOCAL_URL = `${protocol}localhost:${DEFAULT_PORT}`;
+const PROD_URL = `${protocolSecure}personio-app.herokuapp.com`
 
 /**
  * Personio base URLs
  */
 const API_CONNECT_URL = `${protocol}personio-fe-test.herokuapp.com/api/v1/candidates`;
-const baseURL = process.env.NODE_ENV == "development" && LOCAL_URL;
+const baseURL = process.env.NODE_ENV == "development" ? LOCAL_URL : PROD_URL;
 
 /**
  * API Service URLs
