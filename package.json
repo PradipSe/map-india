@@ -8,7 +8,7 @@
     "dev": "NODE_ENV=development node server.js",
     "build": "next build",
     "heroku-postbuild": "npm run build",
-    "start": "NODE_ENV=production PORT=80 node server.js",
+    "start": "NODE_ENV=production node server.js",
     "eslintInit": "./node_modules/.bin/eslint --init",
     "eslint": "./node_modules/.bin/eslint '**/*.js'",
     "prettier": "prettier --ignore-path './.next/*' --config 'package.json' --write '**/*.js'"
