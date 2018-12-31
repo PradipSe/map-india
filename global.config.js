@@ -6,7 +6,7 @@ const protocolSecure = "https://";
 const DEFAULT_PORT = 3000;
 
 const LOCAL_URL = `${protocol}localhost:${DEFAULT_PORT}`;
-const PROD_URL = `${protocolSecure}personio-app.herokuapp.com`
+const PROD_URL = `${protocolSecure}personio-app.herokuapp.com`;
 
 /**
  * Personio base URLs
