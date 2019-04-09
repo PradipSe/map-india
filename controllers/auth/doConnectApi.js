@@ -25,7 +25,9 @@ module.exports = {
     return new Promise(function(resolve, reject) {
       request.get(requestObj, function(err, res, body) {
         if (err) {
+          console.log("--------------ERROR RESPONSE--------------");
           reject(err);
+          console.log("--------------ERROR RESPONSE--------------");
         } else {
           resolve(body);
           console.log("\n\n\n");

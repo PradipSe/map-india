@@ -20,7 +20,7 @@ export const BodyLayoutCSS = createGlobalStyle`
     body {
         margin: 0;
         font-family: ${props =>
-          props.fontFamily ? props.fontFamily : "'calibre', sans-serif"};
+        props.fontFamily ? props.fontFamily : "'calibre', sans-serif"};
     }
 
     html,body

@@ -1,24 +1,45 @@
 import axios from "axios";
 import * as action from "./action";
-import { API_ENDPOINT_URL } from "../../global.config";
+import { API_ENDPOINT_URL, API_ENDPOINT_WEATHER } from "../../global.config";
 
 /**
- * @function initiatePersonioApi
- * @description Will initiate personio api listing from endpoint to store in global state.
+ * @function initiateMapApi
+ * @description Will initiate map api listing from endpoint to store in global redux store.
  */
-export function initiatePersonioApi() {
+export function initiateMapApi() {
   return dispatch => {
-    dispatch(action.requestPersonioApi());
+    dispatch(action.requestMapApi());
     return axios.get(API_ENDPOINT_URL).then(
       json => {
         if (json.status === 200 && json.data && !json.data.error) {
-          dispatch(action.receivePersonioApi(json.data));
+          dispatch(action.receiveMapApi(json.data));
         } else {
-          dispatch(action.failurePersonioApi(json.data.error));
+          dispatch(action.failureMapApi(json.data.error));
         }
       },
       err => {
-        dispatch(action.failurePersonioApi(err));
+        dispatch(action.failureMapApi(err));
+      }
+    );
+  };
+}
+
+export function initiateMapDetails(infoObj) {
+  return dispatch => {
+    dispatch(action.requestMapDetailsApi());
+    return axios.get(`${API_ENDPOINT_WEATHER}?lat=${infoObj.lat}&lon=${infoObj.lng}&APPID=${infoObj.key}`).then(
+      json => {
+        if (json.status === 200 && json.data && !json.data.error) {
+          console.log('JSON: ', json.data);
+          dispatch(action.receiveMapDetailsApi(json.data));
+        } else {
+          console.log('else')
+          dispatch(action.failureMapDetailsApi(json.data.error));
+        }
+      },
+      err => {
+        console.log('errror')
+        dispatch(action.failureMapDetailsApi(err));
       }
     );
   };

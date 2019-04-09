@@ -1,55 +1,41 @@
-import React, { Component } from "react";
-import Header from "../components/header";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { candidateInfoSelector } from "../selectors";
+import { mapInfoSelector, mapDetailSelector } from "../selectors";
 import { createStructuredSelector } from "reselect";
-import { initiatePersonioApi } from "../actions/app/actionCreator";
+import { initiateMapApi } from "../actions/app/actionCreator";
 import HomePage from "../components/homepage";
-import Error from "../components/error";
 
 class MainApp extends Component {
   constructor() {
     super();
   }
 
-  static async getInitialProps({ store, query }) {
+  static async getInitialProps({ store }) {
     /**
      * Dispatching api listing data to redux store, this will serve for both
      * server and client side, on the client side it will behave as componentDidMount().
      */
-    await store.dispatch(initiatePersonioApi());
-    /**
-     * Returning params for filter.
-     */
-    return { param: query.sort };
+    await store.dispatch(initiateMapApi());
   }
 
   render() {
     /**
      * Getting candidate info listing data from redux store.
      */
-    const { candidateInfo, param } = this.props;
+    const { mapInfo, dispatch, mapDetail } = this.props;
+    const mapInfoData = mapInfo && mapInfo.listingInfo && mapInfo.listingInfo.data
+    const mapDetailsData = mapDetail && mapDetail.data
     return (
-      <div>
-        <Header />
-        {candidateInfo.listingInfo.isError === false ? (
-          /**
-           * Home page component
-           */
-          <HomePage param={param} candidateRecords={candidateInfo} />
-        ) : (
-          /**
-           * Error component if something goes wrong
-           */
-          <Error errorData={candidateInfo.listingInfo} />
-        )}
-      </div>
+      <Fragment>
+        <HomePage mapData={mapInfoData} dispatch={dispatch} mapDetails={mapDetailsData} />
+      </Fragment>
     );
   }
 }
 
 const mapStateToProps = createStructuredSelector({
-  candidateInfo: candidateInfoSelector()
+  mapInfo: mapInfoSelector(),
+  mapDetail: mapDetailSelector()
 });
 
 export default connect(mapStateToProps)(MainApp);

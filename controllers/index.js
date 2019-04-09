@@ -3,11 +3,11 @@ const { endpointErrorMsg } = require("../global.config");
 
 module.exports = {
   /**
-   * @function PersonioCallApi
-   * @description Wrapper to call PersonioCallApi from auth.
+   * @function MapCallApi
+   * @description Wrapper to call MapCallApi from auth.
    *
    */
-  PersonioCallApi: async ctx => {
+  MapCallApi: async ctx => {
     const response = await doConnectApi();
     if (JSON.parse(response).data === null) {
       ctx.body = endpointErrorMsg;

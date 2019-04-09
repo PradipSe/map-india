@@ -6,10 +6,19 @@ import { createSelector } from "reselect";
 
 export const selectState = () => state => state;
 /**
- * Candidate info selection from state
+ * Map info selection from state
  */
-export const candidateInfoSelector = () =>
+export const mapInfoSelector = () =>
   createSelector(
     selectState(),
     listingInfo => listingInfo.listingInfo
+  );
+
+/**
+ * Map detail selection from state
+ */
+export const mapDetailSelector = () =>
+  createSelector(
+    selectState(),
+    listingInfo => listingInfo.listingInfo && listingInfo.listingInfo.mapDetails
   );

@@ -1,5 +1,5 @@
 /**
- * Global Personio page routes URL.
+ * Global Map page routes URL.
  * (HINT): Make an entry of component name to create a new URL.
  */
 const routes = require("next-routes");

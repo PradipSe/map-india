@@ -25,7 +25,7 @@ class MyApp extends App {
       <Container>
         <BodyLayoutCSS />
         <Head>
-          <title>Personio App</title>
+          <title>Map App by Pradip</title>
         </Head>
         <Provider store={store}>
           <Component {...pageProps} />

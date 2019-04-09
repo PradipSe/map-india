@@ -1,71 +1,106 @@
 import styled from "styled-components";
-import { LeadText } from "../../common/typography";
 
-export const MainContainer = styled.div`
-  width: auto;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-export const ParentContainer = styled.div`
+export const H1 = styled.h1`
   text-align: center;
-  padding: 50px;
 `;
 
-export const LeadTextHeader = styled(LeadText)`
-  display: inline-block;
-  font-weight: 800;
+export const Grid = styled.div`
+  display: grid;
+	grid-template-columns: 6fr 6fr;
+	grid-gap: 50px;
 `;
 
-export const Table = styled.table`
-  border: 1px solid black;
-  text-align: ${p => (p.align ? p.align : "center")};
-  display: block;
-  height: 400px;
+export const column = styled.div`
+  width:100%;
+`
+
+export const SearchSection = styled.div`
+  position:relative;
+`;
+
+export const SearchList = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 80px;
+  background: #fff;
+  border: 1px solid #ddd;
+  width: 200px;
+  margin-left: 20px;
+  z-index: 99;
+  min-height: 200px;
+  max-height: 200px;
   overflow-y: scroll;
-  width: 100%;
 `;
 
-export const Tbody = styled.tbody``;
-
-export const TH = styled.th`
-  border: 1px solid black;
-`;
-export const TD = styled.td`
-  border: 1px solid black;
-`;
-export const TR = styled.tr`
-  border: 1px solid black;
+export const SearchName = styled.div`
+padding: 10px 10px;
+background: #fff;
+border-bottom: 1px solid #ddd;
+cursor: pointer;
+  &:hover {
+    background: #f5f5f5;
+  }
 `;
 
-export const CheckBoxContainer = styled.div`
-  margin: 10px 10px 0 10px;
-  padding-bottom: 20px;
-  display: inline-block;
-  vertical-align: middle;
-`;
 
-export const CheckBox = styled.input.attrs({
-  name: p => p && p.name,
-  value: p => (p.value ? p.value : "")
-})`
-  margin: 3px 3px 3px 4px;
-`;
-
-export const FormElementText = styled.label`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 160px;
-  margin: 0;
-  padding-left: 5px;
-  cursor: pointer;
+export const InputBox = styled.input`
+  width: 200px;
+  height: 50px;
+  border: 1px solid #000;
   font-size: 16px;
-  letter-spacing: -0.3px;
-  color: #333333;
+  padding-left: 10px;
+  margin: 20px 20px;
+  border-radius: .25rem;
+`
+
+export const SubmitButton = styled.input`
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+`
+
+export const LabelContainer = styled.div`
+display: flex;
 `;
 
-export const CheckboxParentContainer = styled.div`
-  display: inline-block;
-  vertical-align: middle;
+export const Labels = styled.div`
+  align-items: center;
+  margin: 0 20px;
 `;
+
+export const CloseButton = styled.span``;
+
+export const LabelSpan = styled.div`
+padding: 3px 5px;
+margin: 10px 2px;
+border: 1px solid #666;
+border-radius: 15px;
+height: 25px;
+line-height: 25px;
+background: #4ABD5D;
+color: #fff;
+text-align: center;
+`;
+
+export const  TempSpan = styled.div`
+  height: 25px;
+  line-height: 35px;
+  font-size: 16px;
+  margin: 10px 2px;
+`;
+

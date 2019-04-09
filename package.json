@@ -1,8 +1,8 @@
 {
-  "name": "personio",
+  "name": "map",
   "version": "1.0.0",
-  "author": "Rajendra Arora <contact.rajendraarora@gmail.com>",
-  "description": "Personio application",
+  "author": "Pradip Shingare <pradipshingare@gmail.com>",
+  "description": "map application",
   "license": "ISC",
   "scripts": {
     "dev": "NODE_ENV=development node server.js",
@@ -20,6 +20,7 @@
   "dependencies": {
     "@koa/cors": "^2.2.2",
     "axios": "^0.18.0",
+    "google-maps-react": "^2.0.2",
     "koa": "^2.5.3",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.3.0",

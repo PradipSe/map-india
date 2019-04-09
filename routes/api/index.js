@@ -3,7 +3,7 @@
  */
 const Router = require("koa-router");
 const bodyParser = require("koa-bodyparser");
-const { PersonioCallApi } = require("../../controllers");
+const { MapCallApi } = require("../../controllers");
 
 /**
  * Router with global prefix declaration
@@ -11,12 +11,12 @@ const { PersonioCallApi } = require("../../controllers");
 const router = new Router({ prefix: "/endpoint/api" });
 
 /**
- * Personio auth endpoint api route
+ * Auth endpoint api route
  * API Route URL:
- * http://(host:port)/endpoint/api/personio
+ * http://(host:port)/endpoint/api/json
  */
-router.get("/personio", bodyParser(), async ctx => {
-  await PersonioCallApi(ctx);
+router.get("/json", bodyParser(), async ctx => {
+  await MapCallApi(ctx);
 });
 
 module.exports = router;

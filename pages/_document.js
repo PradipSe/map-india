@@ -11,8 +11,8 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
-          <meta name="description" content="Personio application description" />
-          <meta name="keywords" content="Personio" />
+          <meta name="description" content="Map application description" />
+          <meta name="keywords" content="Map" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"
@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
           <meta content="IE=edge" httpEquiv="" />
           <meta content="yes" name="mobile-web-app-capable" />
           <meta content="#fff" name="theme-color" />
-          <meta content="Personio app" name="apple-mobile-web-app-title" />
+          <meta content="Map app" name="apple-mobile-web-app-title" />
           <meta content="black" name="apple-mobile-web-app-status-bar-style" />
           <meta content="#fff" name="msapplication-navbutton-color" />
           <link href="/static/manifest.json" rel="manifest" />
