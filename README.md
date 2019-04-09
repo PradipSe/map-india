@@ -17,8 +17,8 @@ Show map marker on search list of cities in india
 
 - **Before start requirement review and some modification:**
 
-  1. Search inpute to search list of cities name to get value of lat and lon
-  2. Search dropdown to show list of serached cities name.
+  1. Search input to search list of cities name to get value of lat and lon
+  2. Search dropdown to show list of searched cities name.
   3. Map with markers of selected cities.
   4. list of cities with temperature
 
