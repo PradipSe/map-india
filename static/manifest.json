@@ -1,7 +1,7 @@
 {
-    "name": "Personio app",
-    "short_name": "personio",
-    "description": "personio app for listing candidates",
+    "name": "Map India app",
+    "short_name": "Map India",
+    "description": "Map India app for listing candidates",
     "icons": [
         {
             "src": "/android-chrome-36x36.png",
