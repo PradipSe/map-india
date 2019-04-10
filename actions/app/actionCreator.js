@@ -30,15 +30,12 @@ export function initiateMapDetails(infoObj) {
     return axios.get(`${API_ENDPOINT_WEATHER}?lat=${infoObj.lat}&lon=${infoObj.lng}&APPID=${infoObj.key}`).then(
       json => {
         if (json.status === 200 && json.data && !json.data.error) {
-          console.log('JSON: ', json.data);
           dispatch(action.receiveMapDetailsApi(json.data));
         } else {
-          console.log('else')
           dispatch(action.failureMapDetailsApi(json.data.error));
         }
       },
       err => {
-        console.log('errror')
         dispatch(action.failureMapDetailsApi(err));
       }
     );

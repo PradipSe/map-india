@@ -12,8 +12,6 @@ export class MapContainer extends Component {
         position={{lat: val.lat, lng: val.lng}} />
     })
 
-    // console.log('arrMarker: ', arrMarker)
-
     return (
       <Fragment>
         <Map google={this.props.google}

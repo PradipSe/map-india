@@ -6,12 +6,13 @@ const protocolSecure = "https://";
 const DEFAULT_PORT = 3000;
 
 const LOCAL_URL = `${protocol}localhost:${DEFAULT_PORT}`;
+const PROD_URL = `${protocolSecure}map-ind.herokuapp.com`;
 
 /**
  * Base URLs
  */
 const API_CONNECT_URL = `${protocolSecure}api.myjson.com/bins/16abdg`;
-const baseURL = process.env.NODE_ENV == "development" ? LOCAL_URL : '';
+const baseURL = process.env.NODE_ENV == "development" ? LOCAL_URL : PROD_URL;
 
 /**
  * API Service URLs

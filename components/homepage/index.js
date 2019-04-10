@@ -18,13 +18,7 @@ class HomePage extends Component {
       mapSelectedCordinate: [],
       userStartedSearching: false
     }
-
-    // this.removeCity = this.removeCity.bind(this);
   }
-
-  // removeCity = (arg) => {
-  //   console.log('Removed: ', arg)
-  // }
 
   doSearch(e) {
 
@@ -102,8 +96,6 @@ class HomePage extends Component {
   }
 
   render() {
-
-    console.log('saassasa: ', this.state.mapDetailsData)
     let searchSuggestions = this.state.userSearchedData && this.state.userSearchedData.map((val, index) => {
       return <SearchName key={index} data-lat={val.lat} data-lon={val.lon} data-val={val.name} onClick={this.addCityMarkup.bind(val)}>{val.name}</SearchName>;
     })
